@@ -1,6 +1,8 @@
+// variables
 let boxes = document.querySelectorAll(".box");
 let reset = document.querySelector("#reset");
 let newgame = document.querySelector("#newgame");
+let show = document.querySelector(".winner")
 let turn0 = true;
 
 
@@ -15,18 +17,20 @@ const winpattern=[
     [6,7,8]
 ];
 
- newgm = () => 
+//function for new game\reset button
+ reload = () => 
 {
     let turn0 = true;
     for(box of boxes)
     {
         box.disabled = false;
-        box.innerText="";        
+        box.innerText="";
+        show.setAttribute("hidden","show");        
     }
-    document.querySelector(".winner").setAttribute("hidden");
+    
 
 }
-  
+  // main function
 boxes.forEach((box) => {
     box.addEventListener("click", ()=>{
         console.log("box was clicked");
@@ -44,10 +48,7 @@ boxes.forEach((box) => {
     });
 });
 
-function checkWinner(){
-   
-}
-
+// function for checking winner 
 checkWinner = () =>
 {
     for (let pattern of winpattern) 
@@ -67,21 +68,20 @@ checkWinner = () =>
     }
 
 };
-
+// nested function for winner function
 function winn()
 {
     console.log("winner");
-    let show = document.querySelector(".winner")
     show.removeAttribute("hidden");
-    diss();
+    disable();
 }
-
-function diss() {
+ // nested function for winn function to disable buttons
+function disable() {
     for(box of boxes){
         box.disabled = true;
     }
 }
 
 // let newgame = document.querySelector("#newgame");
-    reset.addEventListener("click",  newgm);
-    newgame.addEventListener("click",  newgm);
+    reset.addEventListener("click",  reload);
+    newgame.addEventListener("click",  reload);
