@@ -20,6 +20,8 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
+    
+
 }
 .box{
     height: 18vmin;
@@ -28,7 +30,8 @@ body{
     border: none;
     box-shadow: 0 0 1rem rgba(0,0,0,0.3);
     font-size: 8vmin;
-    color:#D4A373 ;
+    color:#c47f3b ;
+    background-color: #f3ba82;
 }
 #reset{
     padding: 1rem;
@@ -37,6 +40,12 @@ body{
     color: #fff;
     border-radius: 1rem;
     border: none;
+    transition: 0.3s;
+}
+#reset:hover{
+    color: black;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    font-size: 16px;
 }
 #newgame{
     padding: 1rem;
@@ -45,4 +54,10 @@ body{
     color: #fff;
     border-radius: 1rem;
     border: none;
+    transition: 0.3S;
+}
+#newgame:hover{
+    color: black;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    font-size: 16px;
 }
